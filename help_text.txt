@@ -1,0 +1,115 @@
+psuh swap help txt
+------------------ 
+
+what is asked :
+- sort a list of number the most efficiently possible
+
+what is required : 
+
+    -   no leaks
+    -   a makefile with the rule ($(NAME), ALL, CLEAN, FCLEAN)
+    -   bonus must have _bonus(.h/c) and imake rule bonus if there is some forbidden funct on the main part
+    -   if libft allowed must place it in a folder
+
+mandatory part
+
+    -   you have 2 stacks (a,b):
+        stack contains randoms negative and positive number (not lower than INT_ MIN and higher than INT_MAX)
+        the stack b is empty.
+    - only operation that is allowed :
+        SA  : swap the first 2 element of the stack A
+        SB  : swap the first 2 element of the stack B
+        SS  : swap A and B at the same time
+        PA  : push the first element at the top of the stack B
+        PB  : push the first element at the top of the stack A
+        RA  : shift up by 1 all the element for the stack A first become last
+        RB  : shift up by 1 all the element for the stack B first become last
+        RR  : do RA and RB at the same time
+        RRA : shift down the element of the stack A by 1 the last element become the first
+        RRB : shift down the element of the stack A by 1 the last element become the first
+        RRR : do RRA and RRB at the same time
+
+
+turn in file :
+    makefile
+    *.h
+    *.c
+
+authorize funct :
+    *   read  #include <unistd.h>
+    *   write //
+    *   malloc #include <stdlib.h>
+    *   free //
+    *   exit //
+    *   your printf, gnl, etc... (function that you coded)
+    *   libft
+
+things to be carreful about:
+
+the makefile must not relink (when you do 'make' several time, it should work once but not twice)
+
+global var are forbidden, variable taht are declare outside a scope of a function, struct are not global variable.
+
+the program name is push_swap, it is a program not a code it must contain a "int main()"
+
+the instruction are to be separated bu a "\n"
+
+
+the goal is to have the least amount of operation, if you go over the maximum oparation allowed you will have 0
+
+===============================================================================
+if no parametter are specified it should exit directly and give the prompt back
+===============================================================================
+
+===============================================================================
+the B stack must be empty in order for the program to finish !!!!!!!
+===============================================================================
+
+in case of an error it should display error
+
+during the evaluation process a checker file wille be provided to see if you program sort the number if the checker display KO that mean your program didn't sor the number 
+
+
+
+================
+================
+     bonus :
+================
+================
+
+the bonus part is to code the checker code yourself !!!!!!
+
+you must a have a program that tell you that you successfully sorted the stack
+
+
+
+---------------------------------------------
+
+study a but more the linked list
+
+do the parsing of the push_swap.
+
+
+
+===============================================
+
+
+|1| |2| |3| |4| |5|
+
+
+    1   2   3   4
+1   s
+2       s
+3           s
+4               s
+
+
+
+
+list of thing to do today :
+
+find_big:
+    -   find the biggest element on any stack 
+
+find_small : 
+    -   find the smallest element on any stack
