@@ -109,7 +109,11 @@ do the parsing of the push_swap.
 list of thing to do today :
 
 find_big:
-    -   find the biggest element on any stack 
+    -   find the biggest element on any stack V
 
 find_small : 
-    -   find the smallest element on any stack
+    -   find the smallest element on any stack V
+
+
+make a 3 element list and find a algo it see if the stack is sorted
+

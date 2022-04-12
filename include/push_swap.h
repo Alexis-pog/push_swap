@@ -8,13 +8,14 @@ typedef struct s_node
 	int swap;
 	struct s_node* next;
 	struct s_node* previous;
+	int index;
 } t_node;
 
 typedef struct s_val
 {
 	int	value;
 	int	swap;
-
+	int index;
 } t_val;
 
 /*
@@ -28,7 +29,9 @@ t_node		*firstlist(t_node *node);
 t_node		*find_big(t_node *node);
 t_node		*find_small(t_node *node);
 void		ft_lstadd_back(t_node **node, t_node *new);
+void    	ft_lstadd_front(t_node **node, t_node *new);
 void		printlist(t_node *head);
+void		init_val(t_val *val);
 /*
 	free list funct
 */
@@ -41,6 +44,7 @@ void		tail_free(t_node *node);
  |	operation	|
  #==============#
 */
+
 void		sa(t_node *node);
 void		ra(t_node *node);
 void		rra(t_node *node);
@@ -50,6 +54,7 @@ void		rra(t_node *node);
  |	 parsing	|
  #==============#
 */
+int			is_sort(t_node *node);
 
 #endif
 

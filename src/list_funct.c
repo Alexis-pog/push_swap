@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:04:29 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/11 17:18:30 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:01:55 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void printlist(t_node *head)
 	t_node *temporary = head;
 	while(temporary)
 	{
-		printf("%d - ", temporary->value);
+		printf("%d\n",temporary->value);
 		temporary = temporary->next;
 	}
 	printf("\n");
@@ -57,6 +57,15 @@ void    ft_lstadd_back(t_node **node, t_node *new)
 	tmp->next = new;
 	new->previous = tmp;
 }
+
+void    ft_lstadd_front(t_node **node, t_node *new)
+{
+	t_node *tmp;
+	tmp = *node;
+	new->next = tmp;
+	new->previous = NULL;
+}
+
 void middle_free(t_node *node)
 {
 	node->previous->next = node->next;
@@ -103,4 +112,9 @@ t_node *firstlist(t_node *node)
 		node = node->previous;
 	}
 	return(node);
+}
+
+void init_val(t_val *val)
+{
+	val->index = 1;
 }

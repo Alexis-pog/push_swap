@@ -4,7 +4,7 @@ INC = ./include/push_swap.h
 
 ARCH = ./libft/libft.a
 
-SRC1 = 	src/verif_input.c \
+SRC1 = 	src/sorting.c \
 		src/test_linked_liste_parser.c \
 		src/list_funct.c \
 		src/move.c \
