@@ -6,13 +6,14 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 16:08:08 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/11 14:19:56 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/11 17:23:19 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/*
 static int	verif_int_max(const char *str, int n)
 {
 	char	*str2;
@@ -41,31 +42,37 @@ static int	verif_int_max(const char *str, int n)
 		return (1);
 	return (0);
 }
-
+*/
 /*
 	not the real atoi funct must comment this part to make atoi work*------------
 */
 
-void limits(const char *str)
+void	limits(const char *str)
 {
-	if (ft_strncmp("-2147483649",str,ft_strlen(str)) == 0)
-        {
-			write(1,"ERROR\n",6);
-			exit(1);
-		}
-	if (ft_strncmp("2147483648",str,ft_strlen(str)) == 0)
-        {
-			write(1,"ERROR\n",6);
-			exit(1);
-		}
+	if (ft_strncmp("-2147483649", str, 12) == 0)
+	{
+		write (1, "1ERROR\n", 7);
+		exit (1);
+	}
+	if (ft_strncmp("2147483648", str, 11) == 0)
+	{
+		write (1, "2ERROR\n", 7);
+		exit (1);
+	}
 }
 
-void ft_error(int i)
+void	ft_error(int i)
 {
-	write(1,"ERROR\n",6);
+	write(1, "BERROR\n", 7);
 	exit(i);
 }
 
+void	set_val(t_libval *val)
+{
+	val->i = 0;
+	val->j = 0;
+	val->k = 1;
+}
 /*
 
 must place this in the ft_atoi funct
@@ -81,32 +88,29 @@ if (verif_int_max(str, a[0]) == 1)
 
 int	ft_atoi(const char *str)
 {
-	int	a[3];
+	t_libval	val;
 
-	a[0] = 0;
-	a[1] = 0;
-	a[2] = 1;
-	while (str[a[0]] == '\t' || str[a[0]] == '\n' || str[a[0]] == '\v'
-		|| str[a[0]] == '\f' || str[a[0]] == '\r' || str[a[0]] == ' ')
-		a[0]++;
+	set_val(&val);
 	limits(str);
-	if (str[a[0]] == '-' || str[a[0]] == '+')
+	if (str[val.i] == '-')
 	{
-		if (str[a[0]] == '-')
-			a[2] *= -1;
-		if (str[a[0]] == '+')
-			ft_error(1);
-		a[0]++;
+		if (str[val.i] == '-')
+			val.k *= -1;
+		if (ft_strncmp (str, "--", 2) == 0)
+			ft_error (1);
+		if (str[val.i + 1] <= '0' || str[val.i + 1] >= '9')
+			ft_error (1);
+		val.i++;
 	}
-	while (str[a[0]] >= '0' && str[a[0]] <= '9')
+	while (str[val.i] >= '0' && str[val.i] <= '9')
 	{
-		a[1] = a[1] * 10 + (str[a[0]] - '0');
-		a[0]++;
+		val.j = val.j * 10 + (str[val.i] - '0');
+		val.i++;
 	}
-	return (a[1] * a[2]);
+	if ((str[val.i] <= '0' || str[val.i] >= '9' ) && str[val.i])
+		ft_error (1);
+	return (val.j * val.k);
 }
-
-
 
 /*
 int main(int argc, char *argv[1])

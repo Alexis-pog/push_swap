@@ -7,7 +7,9 @@ ARCH = ./libft/libft.a
 SRC1 = 	src/verif_input.c \
 		src/test_linked_liste_parser.c \
 		src/list_funct.c \
-		src/move.c
+		src/move.c \
+		src/main.c \
+		src/find_val.c
 
 OBJ = ${SRC:.c=.o}
 

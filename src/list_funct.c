@@ -6,14 +6,14 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:04:29 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/11 11:09:11 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/11 17:18:30 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 
-t_node *create_new_node(char *value)
+t_node *create_new_node(int value)
 {
 	t_node *result = (t_node *)malloc(sizeof(t_node));
 	if(!result)
@@ -43,7 +43,7 @@ void printlist(t_node *head)
 	t_node *temporary = head;
 	while(temporary)
 	{
-		printf("%s - ", temporary->value);
+		printf("%d - ", temporary->value);
 		temporary = temporary->next;
 	}
 	printf("\n");
@@ -75,10 +75,10 @@ void tail_free(t_node *node)
 {
 	// t_node *tmp;
 	node = lastlist(node);
-	printf("\n%s\n", node->value);
+	printf("\n%d\n", node->value);
 	// tmp = node;
 	node = node->previous;
-	printf("\n%s\n", node->value);
+	printf("\n%d\n", node->value);
 	free(node->next);
 	node->next = NULL;
 }

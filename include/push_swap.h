@@ -4,16 +4,16 @@
 
 typedef struct s_node
 {
-	char *value;
-	char *swap;
+	int value;
+	int swap;
 	struct s_node* next;
 	struct s_node* previous;
 } t_node;
 
 typedef struct s_val
 {
-	char *value;
-	char *swap;
+	int	value;
+	int	swap;
 
 } t_val;
 
@@ -22,9 +22,11 @@ typedef struct s_val
  |	list funct	|
  #==============#
 */
-t_node		*create_new_node(char *value);
+t_node		*create_new_node(int value);
 t_node		*lastlist(t_node *node);
 t_node		*firstlist(t_node *node);
+t_node		*find_big(t_node *node);
+t_node		*find_small(t_node *node);
 void		ft_lstadd_back(t_node **node, t_node *new);
 void		printlist(t_node *head);
 /*
@@ -43,7 +45,11 @@ void		sa(t_node *node);
 void		ra(t_node *node);
 void		rra(t_node *node);
 
-
+/*
+ #==============#
+ |	 parsing	|
+ #==============#
+*/
 
 #endif
 

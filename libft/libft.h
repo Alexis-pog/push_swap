@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 15:41:13 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/11 14:15:21 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:13:13 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+
+typedef struct s_libval
+{
+	int	i;
+	int	j;
+	int	k;
+
+}	t_libval;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -60,6 +68,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 */
 
 void	ft_error(int i);
-void 	limits(const char *str);
+void	limits(const char *str);
+void	set_val(t_libval *val);
 
 #endif
