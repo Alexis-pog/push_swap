@@ -6,14 +6,14 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:04:29 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/12 17:01:55 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/14 16:27:54 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 
-t_node *create_new_node(int value)
+t_node *create_new_node(int value, t_val *val)
 {
 	t_node *result = (t_node *)malloc(sizeof(t_node));
 	if(!result)
@@ -21,7 +21,8 @@ t_node *create_new_node(int value)
 	result->value = value;
 	result->next = NULL;
 	result->previous = NULL;
-	return result;
+	result->index = val->index++;
+	return (result);
 }
 
 void list_free_all(t_node *node)
@@ -43,7 +44,8 @@ void printlist(t_node *head)
 	t_node *temporary = head;
 	while(temporary)
 	{
-		printf("%d\n",temporary->value);
+		printf("%d: %d\n",temporary->index,temporary->value);
+		printf("%p\n",temporary);
 		temporary = temporary->next;
 	}
 	printf("\n");
@@ -82,12 +84,8 @@ void head_free(t_node *node)
 
 void tail_free(t_node *node)
 {
-	// t_node *tmp;
 	node = lastlist(node);
-	printf("\n%d\n", node->value);
-	// tmp = node;
 	node = node->previous;
-	printf("\n%d\n", node->value);
 	free(node->next);
 	node->next = NULL;
 }
@@ -117,4 +115,5 @@ t_node *firstlist(t_node *node)
 void init_val(t_val *val)
 {
 	val->index = 1;
+	val->indexb = 1;
 }

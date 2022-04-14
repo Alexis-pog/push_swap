@@ -16,6 +16,7 @@ typedef struct s_val
 	int	value;
 	int	swap;
 	int index;
+	int indexb;
 } t_val;
 
 /*
@@ -23,7 +24,7 @@ typedef struct s_val
  |	list funct	|
  #==============#
 */
-t_node		*create_new_node(int value);
+t_node		*create_new_node(int value, t_val *val);
 t_node		*lastlist(t_node *node);
 t_node		*firstlist(t_node *node);
 t_node		*find_big(t_node *node);
@@ -45,16 +46,28 @@ void		tail_free(t_node *node);
  #==============#
 */
 
-void		sa(t_node *node);
-void		ra(t_node *node);
-void		rra(t_node *node);
-
+void		swap(t_node **node);
+void		rotate(t_node **node);
+void		reverse_rotate(t_node **node);
+void 		small_sort(t_node **node);
+void		push(t_node **node,t_val *val, t_node *newnode);
 /*
- #==============#
- |	 parsing	|
- #==============#
+ #==================#
+ |	 already sorted	|
+ #==================#
 */
 int			is_sort(t_node *node);
 
+/*
+ #==============#
+ |	 sorting	|
+ #==============#
+*/
+
+void		sort_3_2(t_node **node);
+void 		sort_3_3(t_node **node);
+void		sort_3_4(t_node **node);
+void		sort_3_5(t_node **node);
+void		sort_3_6(t_node **node);
 #endif
 

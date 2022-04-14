@@ -117,3 +117,11 @@ find_small :
 
 make a 3 element list and find a algo it see if the stack is sorted
 
+
+a list is sorted when the small number is at the front the the next small until reaching the biggest one.
+
+s -- next->small -- big
+
+to do !!! 
+
+sorting list 

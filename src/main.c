@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:31:07 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/12 17:13:54 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/14 16:22:56 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ int main(int argc, char **argv)
 {
 	
 	t_node *node;
-	// t_node *node2;
+	t_val val;
 	t_node *new;
+	t_node *newnode;
 	if (argc > 3)
 	{
 		int i = 1;
@@ -38,27 +39,37 @@ int main(int argc, char **argv)
 			}
 		i++;
 		}
+		init_val(&val);
 		i = 1;
-		node = create_new_node(ft_atoi(argv[i++]));
+		node = create_new_node(ft_atoi(argv[i++]),&val);
         while(i < argc)
 		{
-			new = create_new_node(ft_atoi(argv[i]));
+			new = create_new_node(ft_atoi(argv[i]),&val);
 			ft_lstadd_back(&node,new);
 			i++;
 		}
 		if (is_sort(node) == 0)
 			return (0);
 		
+		// printlist(node);
+		// new = find_big(node);
+		// printf("big value : %d\n",new->value);
+		// new = find_small(node);
+		// printf("small value : %d\n",new->value);
+		// rotate(&node);
+		// printlist(node);
+		// reverse_rotate(&node);
+		// swap(&node);
+		// push(&node,&val,newnode);
+		// while(is_sort(node) != 0)
+		// {
+		// 	if (argc < 6)
+		// 		small_sort(&node);
+		// }
+		newnode = create_new_node(node->value,&val);
+		
 		printlist(node);
-		new = find_big(node);
-		printf("big value : %d\n",new->value);
-		new = find_small(node);
-		printf("small value : %d\n",new->value);
-		// node2 = create_new_node(50);
-		// ft_lstadd_front(&node2,new);
-		// node2 = create_new_node(50);
-		// ft_lstadd_front(&node2,new);
-		printlist(node);
+		printlist(newnode);
 		// printlist(node2);
 		// list_free_all(node2);
 		list_free_all(node);
@@ -67,8 +78,13 @@ int main(int argc, char **argv)
 }
 
 /*
- might reuse at some point 
-
+ might reuse at some point
+	
+	node2 = create_new_node(50);
+	ft_lstadd_front(&node2,new);
+	node2 = create_new_node(50);
+	ft_lstadd_front(&node2,new);
+	
 	printf("atoi test : %d\n",ft_atoi("66"));
 	printf("atoi test : %d\n",ft_atoi("66"));
 	printf("atoi test : %d\n",atoi(" -66 45-5"));
@@ -81,7 +97,7 @@ int main(int argc, char **argv)
 	middle_free(tmp);
 	head_free(node);
 	printf("SA :\n");
-	sa(node);
+	swap(node);
 	printlist(node);
 	printf("RA :\n");
 	ra(node);
