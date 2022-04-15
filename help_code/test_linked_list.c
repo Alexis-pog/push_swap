@@ -123,9 +123,7 @@ void printlistone(t_node *head)
 	printf("%d : %s\n",i++ ,temporary->value);
 	temporary = temporary->next;
 	printf("%d : %s\n",i++ ,temporary->value);
-	// printf("%d : %s\n",i++ ,temporary->value);
-
-
+	// printf("%d : %s\n",i++ ,temporary->value)
 }
 
 /*
@@ -144,14 +142,14 @@ new->previous = node;
  #==============#
 */
 
-void sa(t_node *node)
+void swap(t_node *node)
 {
 	node->swap = node->value;
 	node->value = node->next->value;
 	node->next->value = node->swap;
 }
 
-void ra(t_node *node)
+void rotate(t_node *node)
 {
 	t_node *tmp;
 	tmp = lastlist(node);
@@ -161,7 +159,7 @@ void ra(t_node *node)
 	node->value = node->swap;
 }
 
-void rra(t_node *node)
+void reverse_rotate(t_node *node)
 {
 	t_node *tmp;
 	tmp = firstlist(node);
@@ -222,13 +220,13 @@ int main(int argc, char **argv)
 		// middle_free(tmp);
 		// head_free(node);
 		// printf("SA :\n");
-		// sa(node);
+		// swap(node);
 		// printlist(node);
 		// printf("RA :\n");
-		// ra(node);
+		// rotate(node);
 		// printlist(node);
 		// printf("RRA :\n");
-		// rra(node);
+		// reverse_rotate(node);
 		// printlist(node);
 		// printf("\n");
 		// tail_free(node);

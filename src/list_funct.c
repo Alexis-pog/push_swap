@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:04:29 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/14 16:27:54 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/15 13:47:49 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void printlist(t_node *head)
 void    ft_lstadd_back(t_node **node, t_node *new)
 {
 	t_node *tmp;
+	if (!node || !new)
+		return ;
 	tmp = *node;
 	tmp = lastlist(tmp);
 	tmp->next = new;
@@ -63,9 +65,11 @@ void    ft_lstadd_back(t_node **node, t_node *new)
 void    ft_lstadd_front(t_node **node, t_node *new)
 {
 	t_node *tmp;
-	tmp = *node;
+	if (!node || !new)
+		return ;
+	tmp = firstlist(*node);
 	new->next = tmp;
-	new->previous = NULL;
+	*node = new;
 }
 
 void middle_free(t_node *node)
@@ -101,6 +105,17 @@ t_node *lastlist(t_node *node)
 	return(node);
 }
 
+void find_nbr(t_node *node)
+{
+	if (!node)
+		return ;
+		
+	while(node->next)
+	{
+		node = node->next;
+	}
+}
+
 t_node *firstlist(t_node *node)
 {
 	if (!node)
@@ -116,4 +131,19 @@ void init_val(t_val *val)
 {
 	val->index = 1;
 	val->indexb = 1;
+}
+
+void populate(t_node **node, char **argv,int argc, t_val *val)
+{
+	int i;
+
+	i = 1;
+	t_node *new;
+	*node = create_new_node(ft_atoi(argv[i++]),val);
+    while(i < argc)
+	{
+		new = create_new_node(ft_atoi(argv[i]),val);
+		ft_lstadd_back(node,new);
+		i++;
+	}
 }

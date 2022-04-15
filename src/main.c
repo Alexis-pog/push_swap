@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:31:07 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/14 16:22:56 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:12:33 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ int main(int argc, char **argv)
 	
 	t_node *node;
 	t_val val;
-	t_node *new;
-	t_node *newnode;
+	t_node *nodeb;
+	// t_node *newnode2;
 	if (argc > 3)
 	{
+		init_val(&val);
 		int i = 1;
 		int j = 1;
 		char *saved;
@@ -39,15 +40,9 @@ int main(int argc, char **argv)
 			}
 		i++;
 		}
-		init_val(&val);
 		i = 1;
-		node = create_new_node(ft_atoi(argv[i++]),&val);
-        while(i < argc)
-		{
-			new = create_new_node(ft_atoi(argv[i]),&val);
-			ft_lstadd_back(&node,new);
-			i++;
-		}
+		// node = NULL;
+		populate(&node,argv,argc,&val);
 		if (is_sort(node) == 0)
 			return (0);
 		
@@ -60,19 +55,28 @@ int main(int argc, char **argv)
 		// printlist(node);
 		// reverse_rotate(&node);
 		// swap(&node);
-		// push(&node,&val,newnode);
 		// while(is_sort(node) != 0)
 		// {
 		// 	if (argc < 6)
 		// 		small_sort(&node);
 		// }
-		newnode = create_new_node(node->value,&val);
-		
+		nodeb = NULL;
+		push(&node,&nodeb);
+		printlist(nodeb);
+		push(&nodeb,&node);
+		// newnode2 = firstlist(node);
+		// if (!nodeb)
+		// {
+		// 	nodeb = newnode2;
+		// }
+		// newnode2 = create_new_node(20,&val);
+		// ft_lstadd_front(&newnode,newnode2);
 		printlist(node);
-		printlist(newnode);
+		printlist(nodeb);
 		// printlist(node2);
 		// list_free_all(node2);
 		list_free_all(node);
+		list_free_all(nodeb);
 	}
 	return (0);
 }

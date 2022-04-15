@@ -29,6 +29,7 @@ t_node		*lastlist(t_node *node);
 t_node		*firstlist(t_node *node);
 t_node		*find_big(t_node *node);
 t_node		*find_small(t_node *node);
+void		populate(t_node **node, char **argv,int argc, t_val *val);
 void		ft_lstadd_back(t_node **node, t_node *new);
 void    	ft_lstadd_front(t_node **node, t_node *new);
 void		printlist(t_node *head);
@@ -50,7 +51,7 @@ void		swap(t_node **node);
 void		rotate(t_node **node);
 void		reverse_rotate(t_node **node);
 void 		small_sort(t_node **node);
-void		push(t_node **node,t_val *val, t_node *newnode);
+void		push(t_node **node,t_node **nodeb);
 /*
  #==================#
  |	 already sorted	|
