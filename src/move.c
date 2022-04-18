@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:11:01 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/15 16:11:57 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:37:21 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,24 +88,23 @@ void reverse_rotate(t_node **node)
 	write(1,"rra\n",4);
 }
 
-void push(t_node **node,t_node **nodeb)
+void push(t_node **firsta,t_node **firstb)
 {
 	// t_node *anode;
 	t_node *tmp;
 	
-	if (!node)
+	if (!firsta)
 		return ;
-	tmp = firstlist(*nodeb);
+	tmp = firstlist(*firstb);
 	// anode = *node;
-	(*nodeb) = (*node);
+	(*firstb) = (*firsta);
+	// (*nodeb) = (*node);
 	// printf("%d\n",(*nodeb)->value);
-	if ((*node)->next)
-	{
-		(*node) = (*node)->next;
-		(*node)->previous = NULL;
-	}
-	else
-		(*node) = NULL;
-	(*nodeb)->next = tmp;
+	(*firsta) = (*firsta)->next;
+	// (*firsta)->previous->next = tmp;
+	(*firsta)->previous = NULL;
+	// (*firstb)->next->previous = (*firstb);
+	(*firstb)->next = tmp;
+	// (*firsta) = firstlist(*firsta);
 
 }

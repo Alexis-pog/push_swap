@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:04:29 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/15 13:47:49 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:15:35 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ void list_free_all(t_node *node)
 
 void printlist(t_node *head)
 {
+	int i = 0;
 	t_node *temporary = head;
 	while(temporary)
 	{
-		printf("%d: %d\n",temporary->index,temporary->value);
+		printf("%d: %d counter element %d\n",temporary->index,temporary->value,i++);
 		printf("%p\n",temporary);
 		temporary = temporary->next;
 	}
