@@ -82,10 +82,10 @@
 // 		// sa(node);
 // 		// printlist(node);
 // 		// printf("RA :\n");
-// 		// ra(node);
+// 		// rotate(node);
 // 		// printlist(node);
 // 		// printf("RRA :\n");
-// 		// rra(node);
+// 		// reverse_rotate(node);
 // 		// printlist(node);
 // 		// printf("\n");
 // 		// tail_free(node);

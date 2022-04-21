@@ -80,4 +80,4 @@ save: fclean
 	@git commit -m autosave
 	@git push
 
-.PHONY	= all run clean fclean re
+.PHONY	= all run clean fclean re deleting_lib annoncement save deleting

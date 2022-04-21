@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:03:24 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/14 11:22:20 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/19 13:27:17 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,13 @@ void small_sort(t_node **node)
 
 void sort_3_2(t_node **node)
 {
-	reverse_rotate(node);
 	swap(node);
+	rotate(node);
 }
 
 void sort_3_3(t_node **node)
 {
-	reverse_rotate(node);
-	reverse_rotate(node);
+	rotate(node);
 }
 
 void sort_3_4(t_node **node)

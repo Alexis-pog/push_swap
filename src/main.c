@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:31:07 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/18 16:37:04 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:29:17 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
 		// printf("small value : %d\n",new->value);
 		// rotate(&node);
 		// printlist(node);
-		// reverse_rotate(&node);
+		reverse_rotate(&node);
 		// swap(&node);
 		// while(is_sort(node) != 0)
 		// {
@@ -61,10 +61,12 @@ int main(int argc, char **argv)
 		// 		small_sort(&node);
 		// }
 		nodeb = NULL;
-		push(&node,&nodeb);
-		printlist(nodeb);
+		// printf("%p\n",nodeb);
+		// push(&node,&nodeb);
+		// push(&node,&nodeb);
+		// printlist(nodeb);
 		// push(&nodeb,&node);
-		push(&nodeb,&node);
+		// push(&nodeb,&node);
 		// newnode2 = firstlist(node);
 		// if (!nodeb)
 		// {
@@ -76,7 +78,7 @@ int main(int argc, char **argv)
 		// printlist(nodeb);
 		// printlist(node2);
 		// list_free_all(node2);
-		list_free_all(node);
+		list_free_all(&node);
 		// list_free_all(nodeb);
 	}
 	return (0);
