@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:04:29 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/21 13:22:10 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/25 17:15:35 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 t_node *create_new_node(int value, t_val *val)
 {
+	(void)val;
 	t_node *result = (t_node *)malloc(sizeof(t_node));
 	if(!result)
 		return(NULL);
 	result->value = value;
 	result->next = NULL;
-	result->index = val->index++;
+	result->sort_value = 0;
 	return (result);
 }
 
@@ -39,12 +40,10 @@ void list_free_all(t_node **node)
 
 void printlist(t_node *head)
 {
-	int i = 0;
 	t_node *temporary = head;
 	while(temporary)
 	{
-		printf("%d: %d counter element %d\n",temporary->index,temporary->value,i++);
-		printf("%p\n",temporary);
+		printf(" value: |%d| Maddress: |%p| |%d| sort_val\n",temporary->value,temporary,temporary->sort_value);
 		temporary = temporary->next;
 	}
 	printf("\n");
@@ -106,7 +105,7 @@ void populate(t_node **node, char **argv,int argc, t_val *val)
 	t_node *new;
 	*node = create_new_node(ft_atoi(argv[i++]),val);
 	(*node)->head = *node;
-    while(i < argc)
+	while(i < argc)
 	{
 		new = create_new_node(ft_atoi(argv[i]),val);
 		ft_lstadd_back(node,new);

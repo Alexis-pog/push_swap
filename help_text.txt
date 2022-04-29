@@ -125,3 +125,5 @@ s -- next->small -- big
 to do !!! 
 
 sorting list 
+
+recode everything that i did but with a linked list that fucked everything god fucking danmit

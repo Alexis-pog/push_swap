@@ -6,9 +6,9 @@ typedef struct s_node
 {
 	int value;
 	int swap;
+	int sort_value;
 	struct s_node* next;
 	struct s_node* head;
-	int index;
 } t_node;
 
 typedef struct s_val
@@ -26,13 +26,15 @@ typedef struct s_val
 */
 t_node		*create_new_node(int value, t_val *val);
 t_node		*lastlist(t_node *node);
-t_node		*find_big(t_node *node);
-t_node		*find_small(t_node *node);
+t_node		*find_big(t_node **node);
+int			find_small(t_node **node);
 void		populate(t_node **node, char **argv,int argc, t_val *val);
 void		ft_lstadd_back(t_node **node, t_node *new);
 void    	ft_lstadd_front(t_node **node, t_node *new);
 void		printlist(t_node *head);
 void		init_val(t_val *val);
+t_node		*find_node(t_node **node,int value);
+void		simple_list(t_node **node);
 /*
 	free list funct
 */
@@ -46,9 +48,9 @@ void		tail_free(t_node *node);
  #==============#
 */
 
-void		swap(t_node **node);
-void		rotate(t_node **node);
-void		reverse_rotate(t_node **node);
+void		swap(t_node **node,char *cmd);
+void		rotate(t_node **node, char *cmd);
+void		reverse_rotate(t_node **node, char *cmd);
 void 		small_sort(t_node **node);
 void		push(t_node **node,t_node **nodeb);
 /*

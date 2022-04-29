@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 15:41:13 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/11 16:13:13 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/25 15:50:37 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_libval
 {
-	int	i;
-	int	j;
-	int	k;
+	ssize_t	i;
+	ssize_t	j;
+	ssize_t	k;
 
 }	t_libval;
 

@@ -6,12 +6,13 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:03:24 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/19 13:27:17 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/22 12:17:51 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*
 void small_sort(t_node **node)
 {
 	t_node *small;
@@ -61,3 +62,4 @@ void sort_3_6(t_node **node)
 {
 	swap(node);
 }
+*/
