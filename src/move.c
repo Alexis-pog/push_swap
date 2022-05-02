@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:11:01 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/02 11:09:56 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:35:57 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ void swap(t_node **node, char *cmd)
 {
 	int first;
 	int firstnext;
-	// int 	swap;
+
 	first = (*node)->head->value;
 	firstnext = (*node)->head->next->value;
 	(*node)->head->value = firstnext;
 	(*node)->head->next->value = first;
 	first = (*node)->head->sort_value;
 	firstnext = (*node)->head->next->sort_value;
-	(*node)->head->value = firstnext;
-	(*node)->head->next->value = first;
+	(*node)->head->sort_value = firstnext;
+	(*node)->head->next->sort_value = first;
 	write(1,cmd,ft_strlen(cmd));
 }
 
@@ -44,6 +44,7 @@ void rotate(t_node **node, char *cmd)
 	(*node) = (*node)->next;
 	last->next = first;
 	first->next = NULL;
+	(*node)->head = (*node);
 	write(1,cmd,ft_strlen(cmd));
 }
 
@@ -61,7 +62,7 @@ void reverse_rotate(t_node **node, char *cmd)
 	last->next = first;
 	(*node)->head = last;
 	prevlast->next = NULL;
-	(*node) = (*node)->head;
+	(*node)->head = (*node);
 	write(1,cmd,ft_strlen(cmd));
 }
 

@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:28:12 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/02 10:45:20 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:04:11 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,24 @@
 // 		node = node->next;
 // 	return(node);
 // }
-/*
-t_node  *find_big(t_node **node)
+
+int	find_big(t_node **node)
 {
 	t_node *tmp;
 	int cmp;
 
-	cmp = INT_MAX;
+	cmp = INT_MIN;
 	tmp = (*node)->head;
-	while((*node)->next)
+	while(tmp)
 	{
-		tmp = (*node);
-		while(tmp->next)
-		{
-			if ((*node)->value > cmp)
-				cmp = (*node)->value;
-			tmp = tmp->next;
-		}
-		(*node) = (*node)->next;
+		if (cmp < tmp->value)
+			cmp = tmp->value;
+		tmp = tmp->next;
 	}
-	return ((*node));
+	// printf("list MAX value : %d\n",cmp);
+	return (cmp);
 }
-*/
+
 
 int	find_small(t_node **node)
 {
@@ -173,6 +169,6 @@ int	counting_list(t_node **node)
 		count++;
 		tmp = tmp->next;
 	}
-	printf("%d\n",count);
+	// printf("%d\n",count);
 	return (count);
 }

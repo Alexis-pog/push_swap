@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:31:07 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/29 16:21:17 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/02 16:36:01 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	
 	t_node *node;
 	t_val val;
-	t_node *nodeb;
+	// t_node *nodeb;
 	// int temp = 0;
 	// t_node *newnode2;
 	if (argc > 3)
@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 		populate(&node,argv,argc,&val);
 		if (is_sort(node) == 0)
 			return (0);
+		simple_list(&node, &val);
 		
 		// printlist(node);
 		// new = find_big(node);
@@ -58,7 +59,7 @@ int main(int argc, char **argv)
 		// 	if (argc < 6)
 		// 		small_sort(&node);
 		// }
-		nodeb = NULL;
+		// nodeb = NULL;
 		// push(&node,&nodeb);
 		// push(&node,&nodeb);
 		// push(&nodeb,&node);
@@ -71,11 +72,13 @@ int main(int argc, char **argv)
 		// newnode2 = create_new_node(20,&val);
 		// ft_lstadd_front(&newnode,newnode2);
 		// printlist(node);
+		// printlist(node);
 		// reverse_rotate(&node,"RRA\n");
-		// swap(&node);
 		// rotate(&node,"RA\n");
-		// temp = find_small(&node);
-		simple_list(&node, &val);
+		// swap(&node,"SA\n");
+		// find_small(&node);
+		// printf("%d\n",(*node).head->value);
+		// find_big(&node);
 		// counting_list(&node);
 		// temp = find_next_small(&node,temp);
 		printlist(node);
