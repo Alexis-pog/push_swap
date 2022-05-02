@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:04:29 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/25 17:15:35 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/29 10:32:41 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void printlist(t_node *head)
 	t_node *temporary = head;
 	while(temporary)
 	{
-		printf(" value: |%d| Maddress: |%p| |%d| sort_val\n",temporary->value,temporary,temporary->sort_value);
+		printf("value: |%d| Maddress: |%p| |%d| sort_val\n",temporary->value,temporary,temporary->sort_value);
 		temporary = temporary->next;
 	}
 	printf("\n");
@@ -93,7 +93,7 @@ void find_nbr(t_node *node)
 
 void init_val(t_val *val)
 {
-	val->index = 1;
+	val->count = 0;
 	val->indexb = 1;
 }
 

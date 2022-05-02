@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:11:01 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/22 18:19:26 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/02 11:09:56 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ void swap(t_node **node, char *cmd)
 	// int 	swap;
 	first = (*node)->head->value;
 	firstnext = (*node)->head->next->value;
+	(*node)->head->value = firstnext;
+	(*node)->head->next->value = first;
+	first = (*node)->head->sort_value;
+	firstnext = (*node)->head->next->sort_value;
 	(*node)->head->value = firstnext;
 	(*node)->head->next->value = first;
 	write(1,cmd,ft_strlen(cmd));

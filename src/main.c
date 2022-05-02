@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:31:07 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/29 09:50:27 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/04/29 16:21:17 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	t_node *node;
 	t_val val;
 	t_node *nodeb;
+	// int temp = 0;
 	// t_node *newnode2;
 	if (argc > 3)
 	{
@@ -73,8 +74,10 @@ int main(int argc, char **argv)
 		// reverse_rotate(&node,"RRA\n");
 		// swap(&node);
 		// rotate(&node,"RA\n");
-		// find_small(&node);
-		simple_list(&node);
+		// temp = find_small(&node);
+		simple_list(&node, &val);
+		// counting_list(&node);
+		// temp = find_next_small(&node,temp);
 		printlist(node);
 		// printlist(nodeb);
 		// list_free_all(node2);
