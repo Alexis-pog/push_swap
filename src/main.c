@@ -6,18 +6,18 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:31:07 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/02 16:36:01 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/03 17:08:24 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 int main(int argc, char **argv)
 {
 	
 	t_node *node;
 	t_val val;
-	// t_node *nodeb;
+	t_node *nodeb;
 	// int temp = 0;
 	// t_node *newnode2;
 	if (argc > 3)
@@ -45,7 +45,10 @@ int main(int argc, char **argv)
 		// node = NULL;
 		populate(&node,argv,argc,&val);
 		if (is_sort(node) == 0)
+		{
+			list_free_all(&node);
 			return (0);
+		}
 		simple_list(&node, &val);
 		
 		// printlist(node);
@@ -54,15 +57,18 @@ int main(int argc, char **argv)
 		// new = find_small(node);
 		// printf("small value : %d\n",new->value);
 		// printlist(node);
-		// while(is_sort(node) != 0)
-		// {
-		// 	if (argc < 6)
-		// 		small_sort(&node);
-		// }
-		// nodeb = NULL;
+		nodeb= NULL;
+		while(is_sort(node) != 0)
+		{
+			if (argc < 3)
+				small_sort(&node);
+			if (argc > 4)
+				radix_sort(&node,&nodeb,-1);
+		}
 		// push(&node,&nodeb);
-		// push(&node,&nodeb);
+		// printlist(nodeb);
 		// push(&nodeb,&node);
+		// printlist(nodeb);
 		// push(&nodeb,&node);
 		// newnode2 = firstlist(node);
 		// if (!nodeb)
@@ -82,7 +88,7 @@ int main(int argc, char **argv)
 		// counting_list(&node);
 		// temp = find_next_small(&node,temp);
 		printlist(node);
-		// printlist(nodeb);
+		printlist(nodeb);
 		// list_free_all(node2);
 		list_free_all(&node);
 		// list_free_all(nodeb);

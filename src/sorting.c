@@ -6,11 +6,11 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:03:24 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/02 16:36:08 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/03 15:57:06 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 
 void small_sort(t_node **node)

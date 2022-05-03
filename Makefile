@@ -1,6 +1,6 @@
 NAME = push_swap
 
-INC = ./include/push_swap.h
+INC = include
 
 ARCH = ./libft/libft.a
 
@@ -9,6 +9,7 @@ SRC1 = 	src/sorting.c \
 		src/list_funct.c \
 		src/move.c \
 		src/main.c \
+		src/margulin.c \
 		src/find_val.c
 
 OBJ = ${SRC:.c=.o}
@@ -17,7 +18,7 @@ OBJ = ${SRC:.c=.o}
 SRC	:= $(notdir $(SRC1))
 OBJS = $(addprefix oubject/, $(OBJ))
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -I$(INC) -Ilibft
 
 VPATH := src/
 #---------------------------------------------------

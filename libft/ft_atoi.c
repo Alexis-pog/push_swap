@@ -6,7 +6,7 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 16:08:08 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/25 16:32:22 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:07:50 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,9 @@ void	limits(const char *str)
 		
 }
 
-void	ft_error(int i)
+void	ft_error(int i, t_node **node)
 {
+	list_free_all(node);
 	write(1, "+ERROR\n", 8);
 	exit(i);
 }
@@ -82,7 +83,7 @@ if (verif_int_max(str, a[0]) == 1)
 -------------------------------------------------------------------------------
 */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, t_node **node)
 {
 	t_libval	val;
 
@@ -92,9 +93,9 @@ int	ft_atoi(const char *str)
 		if (str[val.i] == '-')
 			val.k *= -1;
 		if (ft_strncmp (str, "--", 2) == 0)
-			ft_error (1);
+			ft_error (1,node);
 		if (str[val.i + 1] < '0' || str[val.i + 1] > '9')
-			ft_error (1);
+			ft_error (1,node);
 		val.i++;
 	}
 	while (str[val.i] >= '0' && str[val.i] <= '9')
@@ -103,9 +104,9 @@ int	ft_atoi(const char *str)
 		val.i++;
 	}
 	if ((str[val.i] <= '0' || str[val.i] >= '9' ) && str[val.i])
-		ft_error (1);
+		ft_error (1,node);
 	if (val.j > INT_MAX || (val.j * val.k) < INT_MIN)
-		ft_error(1);
+		ft_error(1,node);
 	return ((int)val.j * (int)val.k);
 }
 

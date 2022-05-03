@@ -6,13 +6,15 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 15:41:13 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/25 15:50:37 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:46:19 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "push_swap.h"
+# include "linker.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -44,7 +46,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, t_node **node);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 void	*ft_calloc(size_t count, size_t size);
@@ -68,7 +70,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
  #===============#
 */
 
-void	ft_error(int i);
+void	ft_error(int i, t_node **node);
 void	limits(const char *str);
 void	set_val(t_libval *val);
 

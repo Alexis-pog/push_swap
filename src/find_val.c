@@ -6,11 +6,11 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:28:12 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/02 14:04:11 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:15:43 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 // t_node  *find_big(t_node *node)
 // {
@@ -48,7 +48,6 @@ int	find_big(t_node **node)
 			cmp = tmp->value;
 		tmp = tmp->next;
 	}
-	// printf("list MAX value : %d\n",cmp);
 	return (cmp);
 }
 
@@ -66,7 +65,6 @@ int	find_small(t_node **node)
 			cmp = tmp->value;
 		tmp = tmp->next;
 	}
-	// printf("list min value : %d\n",cmp);
 	return (cmp);
 }
 
@@ -92,25 +90,32 @@ int	find_next_small(t_node **node, int saved)
 			tmp = tmp->next;
 		tmp = tmp->next;
 	}
-	// printf("list min value : %d\n",new);
 	return (new);
 }
+
+// int	find_next_small_modif(t_node **node, int saved)
+// {
+// 	t_node *tmp;
+// 	int new;
+// 	int flags;
+
+// 	flags = 0;
+// 	new = 0;
+// 	tmp = (*node)->head;
+// 	while(tmp)
+// 	{
+		
+// 			tmp = tmp->next;
+// 		tmp = tmp->next;
+// 	}
+// 	return (new);
+// }
 
 
 /*
  do a loop in a loop and then break the cylce once the smalest value as been found 
 */
 
-// int is_sort(t_node *node)
-// {
-// 	while(node->next && node->value < node->next->value)
-// 	{
-// 		node = node->next;
-// 	}
-// 	if(node->next != NULL)
-// 		return(0);
-// 	return(1);
-// }
 
 int	is_sort(t_node *node)
 {
@@ -132,7 +137,6 @@ t_node	*find_node(t_node **node,int value)
 			break ;
 		tmp = tmp->next;
 	}
-	// printf("%p\n", tmp);
 	return (tmp);
 }
 
@@ -146,8 +150,6 @@ void	simple_list(t_node **node, t_val *val)
 	i = 1;
 	val->swap = find_small(node);
 	count = counting_list(node);
-	// tmp = find_node(node, count);
-	// tmp->sort_value = i++;
 	while(i <= count)
 	{
 		tmp = find_node(node, val->swap);
@@ -155,7 +157,6 @@ void	simple_list(t_node **node, t_val *val)
 		val->swap = find_next_small(node, val->swap);
 	}
 }
-
 
 int	counting_list(t_node **node)
 {
@@ -169,6 +170,5 @@ int	counting_list(t_node **node)
 		count++;
 		tmp = tmp->next;
 	}
-	// printf("%d\n",count);
 	return (count);
 }

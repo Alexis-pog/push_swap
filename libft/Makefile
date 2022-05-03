@@ -6,7 +6,7 @@
 #    By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 17:00:22 by acoquele          #+#    #+#              #
-#    Updated: 2022/04/06 10:58:16 by acoquele         ###   ########.fr        #
+#    Updated: 2022/05/03 16:06:22 by acoquele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,7 @@ OBJ = ${SRC:.c=.o}
 SRC	:= $(notdir $(SRC1) $(SRC2))
 OBJS = $(addprefix oubject/, $(OBJ))
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -I../include
 
 VPATH := src/
 #---------------------------------------------------

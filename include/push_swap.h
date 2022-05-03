@@ -1,23 +1,25 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "linker.h"
+# include "../libft/libft.h"
+// typedef struct s_node
+// {
+// 	int value;
+// 	int swap;
+// 	int sort_value;
+// 	struct s_node* next;
+// 	struct s_node* head;
+// } t_node;
 
-typedef struct s_node
-{
-	int value;
-	int swap;
-	int sort_value;
-	struct s_node* next;
-	struct s_node* head;
-} t_node;
+// typedef struct s_val
+// {
+// 	int	value;
+// 	int	swap;
+// 	int count;
+// 	int indexb;
+// } t_val;
 
-typedef struct s_val
-{
-	int	value;
-	int	swap;
-	int count;
-	int indexb;
-} t_val;
+
 
 /*
  #==============#
@@ -37,6 +39,7 @@ int			find_big(t_node **node);
 int			counting_list(t_node **node);
 int			find_next_small(t_node **node, int saved);
 int			find_small(t_node **node);
+int			find_next_small_modif(t_node **node, int saved);
 
 /*
 	free list funct
@@ -69,6 +72,7 @@ int			is_sort(t_node *node);
  #==============#
 */
 
+void		radix_sort(t_node **node, t_node **nodeb, int decal);
 void		sort_3_2(t_node **node);
 void 		sort_3_3(t_node **node);
 void		sort_3_4(t_node **node);

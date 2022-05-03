@@ -6,11 +6,11 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:11:01 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/02 14:35:57 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/03 17:07:47 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 /*
  #==============#
@@ -39,7 +39,7 @@ void rotate(t_node **node, char *cmd)
 	t_node *first;
 	t_node *last;
 	// int swap;
-	first = (*node);
+	first = (*node)->head;
 	last = lastlist(*node);
 	(*node) = (*node)->next;
 	last->next = first;

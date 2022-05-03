@@ -6,11 +6,11 @@
 /*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:04:29 by acoquele          #+#    #+#             */
-/*   Updated: 2022/04/29 10:32:41 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:29:02 by acoquele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 
 t_node *create_new_node(int value, t_val *val)
@@ -27,14 +27,14 @@ t_node *create_new_node(int value, t_val *val)
 
 void list_free_all(t_node **node)
 {
-	int i = 0;
+	// int i = 0;
 	t_node *tmp;
 	tmp = (*node);
 	while(tmp)
 	{
 		free(tmp);
 		tmp = tmp->next;
-		printf("free nbr : %d\n",i++);
+		// printf("free nbr : %d\n",i++);
 	}
 }
 
@@ -103,11 +103,11 @@ void populate(t_node **node, char **argv,int argc, t_val *val)
 
 	i = 1;
 	t_node *new;
-	*node = create_new_node(ft_atoi(argv[i++]),val);
+	*node = create_new_node(ft_atoi(argv[i++], node), val);
 	(*node)->head = *node;
 	while(i < argc)
 	{
-		new = create_new_node(ft_atoi(argv[i]),val);
+		new = create_new_node(ft_atoi(argv[i], node), val);
 		ft_lstadd_back(node,new);
 		i++;
 	}
