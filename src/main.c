@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
+/*   By: workplace <workplace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:31:07 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/03 17:08:24 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/06 13:24:29 by workplace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	
 	t_node *node;
 	t_val val;
-	t_node *nodeb;
+	// t_node *nodeb;
 	// int temp = 0;
 	// t_node *newnode2;
 	if (argc > 3)
@@ -57,14 +57,14 @@ int main(int argc, char **argv)
 		// new = find_small(node);
 		// printf("small value : %d\n",new->value);
 		// printlist(node);
-		nodeb= NULL;
-		while(is_sort(node) != 0)
-		{
-			if (argc < 3)
-				small_sort(&node);
-			if (argc > 4)
-				radix_sort(&node,&nodeb,-1);
-		}
+		// nodeb= NULL;
+		// while(is_sort(node) != 0)
+		// {
+		// 	if (argc < 3)
+		// 		small_sort(&node);
+		// 	if (argc > 4)
+		// 		radix_sort(&node,&nodeb,-1);
+		// }
 		// push(&node,&nodeb);
 		// printlist(nodeb);
 		// push(&nodeb,&node);
@@ -78,17 +78,18 @@ int main(int argc, char **argv)
 		// newnode2 = create_new_node(20,&val);
 		// ft_lstadd_front(&newnode,newnode2);
 		// printlist(node);
-		// printlist(node);
-		// reverse_rotate(&node,"RRA\n");
-		// rotate(&node,"RA\n");
+		printlist(node);
+		reverse_rotate(&node,"RRA\n");
 		// swap(&node,"SA\n");
+		// rotate(&node,"RA\n");
+		printf("%d\n",(*node).head->value);
 		// find_small(&node);
 		// printf("%d\n",(*node).head->value);
 		// find_big(&node);
 		// counting_list(&node);
 		// temp = find_next_small(&node,temp);
 		printlist(node);
-		printlist(nodeb);
+		// printlist(nodeb);
 		// list_free_all(node2);
 		list_free_all(&node);
 		// list_free_all(nodeb);

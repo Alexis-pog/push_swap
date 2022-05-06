@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_val.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
+/*   By: workplace <workplace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:28:12 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/03 16:15:43 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/06 12:39:02 by workplace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,10 +147,10 @@ void	simple_list(t_node **node, t_val *val)
 	int count;
 	int i;
 
-	i = 1;
+	i = 0;
 	val->swap = find_small(node);
 	count = counting_list(node);
-	while(i <= count)
+	while(i < count)
 	{
 		tmp = find_node(node, val->swap);
 		tmp->sort_value = i++;

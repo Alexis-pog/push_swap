@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoquele <acoquele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: workplace <workplace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:09:58 by acoquele          #+#    #+#             */
-/*   Updated: 2021/10/01 16:43:31 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/06 12:36:48 by workplace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub_str;
 	size_t	count;
 
-	if (!s || s == '\0')
+	if (!s || *s == '\0')
 		return (NULL);
 	count = 0;
 	if (start >= ft_strlen(s))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoquele <acoquele@student@.42.fr>         +#+  +:+       +#+        */
+/*   By: workplace <workplace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:11:01 by acoquele          #+#    #+#             */
-/*   Updated: 2022/05/03 17:07:47 by acoquele         ###   ########.fr       */
+/*   Updated: 2022/05/06 13:30:53 by workplace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,17 @@ void rotate(t_node **node, char *cmd)
 void reverse_rotate(t_node **node, char *cmd)
 {
 	t_node *prevlast;
-	t_node *first;
 	t_node *last;
-	
+
 	prevlast = (*node);
-	first = (*node);
 	last = lastlist(*node);
 	while(prevlast->next->next)
 		prevlast = prevlast->next;
-	last->next = first;
+	last->next = (*node)->head;
 	(*node)->head = last;
 	prevlast->next = NULL;
-	(*node)->head = (*node);
+	(*node) = (*node)->head;
+	printf("%d",(*node)->head->value);
 	write(1,cmd,ft_strlen(cmd));
 }
 
