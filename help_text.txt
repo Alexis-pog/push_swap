@@ -126,4 +126,21 @@ to do !!!
 
 sorting list 
 
-recode everything that i did but with a linked list that fucked everything god fucking danmit
+
+--------------------------------------------------------------------------------------------------------
+
+
+implement the cycle list to hqve roughly an idea where the node should go then make a tree algorithm to
+find the best possible move including pushing and waiting for the next one to move.
+
+
+look up tree algorithm.
+
+tree structure : 
+
+A tree structure, tree diagram, or tree model is a way of representing the hierarchical nature of a structure in a graphical form. 
+It is named a "tree structure" because the classic representation resembles a tree, 
+although the chart is generally upside down compared to a biological tree,
+with the "stem" at the top and the "leaves" at the bottom.
+
+(https://en.wikipedia.org/wiki/Tree_structure)
